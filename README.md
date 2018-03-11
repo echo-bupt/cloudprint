@@ -14,5 +14,6 @@
  **Contact Me**
  * QQ: 863511096
  * 微信号:xzh863511096
+ ![""](https://github.com/echo-bupt/cloudprint/blob/master/wx.jpg "微信二维码")
   
 
