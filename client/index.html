@@ -1,0 +1,180 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>字符云在线打印</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/hills.css">
+<phonegap></phonegap>
+    <!--组件依赖css begin-->
+    <link rel="stylesheet" type="text/css" href="./css/icons.default.css" />
+
+    <link rel="stylesheet" type="text/css" href="./css/widget/navigator/navigator.css" />
+    <link rel="stylesheet" type="text/css" href="./css/widget/navigator/navigator.default.css" />
+
+    <link rel="stylesheet" type="text/css" href="./css/widget/dropmenu/dropmenu.css" />
+    <link rel="stylesheet" type="text/css" href="./css/widget/dropmenu/dropmenu.default.css" />
+
+    <link rel="stylesheet" type="text/css" href="./css/widget/dialog/dialog.css" />
+    <link rel="stylesheet" type="text/css" href="./css/widget/dialog/dialog.default.css" />
+    <!--皮肤文件，若不使用该皮肤，可以不加载-->
+    <!--组件依赖css end-->
+    <!--组件依赖js begin-->
+    <script type="text/javascript" src="./js/zepto.js"></script>
+    <script type="text/javascript" src="./js/extend/touch.js"></script>
+    <script type="text/javascript" src="./js/extend/highlight.js"></script>
+    <script type="text/javascript" src="./js/extend/matchMedia.js"></script>
+    <script type="text/javascript" src="./js/extend/event.ortchange.js"></script>
+    <script type="text/javascript" src="./js/extend/parseTpl.js"></script>
+    <script type="text/javascript" src="./js/extend/offset.js"></script>
+    <script type="text/javascript" src="./js/extend/iscroll.js"></script>
+
+    <script type="text/javascript" src="./js/core/gmu.js"></script>
+    <script type="text/javascript" src="./js/core/event.js"></script>
+    <script type="text/javascript" src="./js/core/widget.js"></script>
+
+    <script type="text/javascript" src="./js/widget/navigator/navigator.js"></script>
+
+    <script type="text/javascript" src="./js/widget/popover/popover.js"></script>
+    <script type="text/javascript" src="./js/widget/popover/arrow.js"></script>
+    <script type="text/javascript" src="./js/widget/popover/dismissible.js"></script>
+    <script type="text/javascript" src="./js/widget/dropmenu/dropmenu.js"></script>
+    <script type="text/javascript" src="./js/widget/dropmenu/placement.js"></script>
+
+    <script type="text/javascript" src="./js/widget/dialog/dialog.js"></script>
+    <script type="text/javascript" src="./js/widget/dialog/$position.js"></script>
+
+    <script type="text/javascript" src="./js/app.js"></script>
+    <script type="text/javascript" src="./js/controller.js"></script>
+    <!--组件依赖js end-->
+   
+</head>
+<body>
+  <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+  <div id="content_main"  role="main">
+      <div id="login_page" class="__page__">
+        <header>
+         <h1 id="header_h1">字符云打印-用户登录</h1>
+        </header>
+        <div id="login_scroll" >
+        <div id="login_content" >
+            <p style="text-align:center;">测试用户名：090104010106,密码：123123</p> 
+            <div class="controls">
+              <input type="text" class="text-in" name="user_name" id="login_name" placeholder="用户名" value="">
+            </div>  
+            <div class="controls">
+                <input type="password" class="text-in" name="password" id="login_password" placeholder="密码">
+            </div>
+            <div class="controls">
+              <input type="submit" id="login_a" name="login" class="btn btn-large btn-block" value="登录">
+            </div>
+        </div>
+        </div> 
+     
+      </div>
+      <div id="index_page" class="__page__">
+        <header>
+         <h1 id="header_h1">字符云打印</h1>
+        </header>
+        <div id="index_scroll">
+        <div id="index_content">
+
+          <div id="index_index" class="__index_page__">     
+
+          </div>
+
+          <div id="index_source" class="__index_page__">     
+            <ul id="source-list" class="data-list">
+
+            </ul>
+            <div class="ui-refresh-down"></div>
+          </div>
+
+          <div id="index_task" class="__index_page__">     
+            <div id="task_submit">
+              <h3 style="margin-left:10px;">打印设备</h3>
+              <ul id="task-printer-list" class="data-list"></ul> 
+              <a href="#" style="float:right;position:relative;top:-37px;right:8px;" class="btn btn-min" id="printer-select-btn">选择</a>
+              <div id="printer-list-dialog"></div>
+              <h3 style="margin-left:10px;">资源清单</h3>
+              <ul id="task-source-list" class="data-list"></ul> 
+              <div class="controls" style="width:100%;">
+                <input type="hidden" id="task_id" name="task_id" value="-1" >
+                <input type="submit"  id="task_submit_a" name="task_submit" class="btn btn-large btn-block" value="提交任务">
+              </div>                             
+            </div>              
+          </div>
+
+          <div id="user_task" class="__index_page__">     
+            <ul id="task-list" class="data-list">
+            </ul>
+            <div class="ui-refresh-down"></div>
+          </div>
+
+          <div id="user_source" class="__index_page__">     
+            <ul id="usource-list" class="data-list">
+            </ul>
+            <div class="ui-refresh-down"></div>
+          </div>
+
+        </div>
+        </div>
+        <footer>
+          <ul id="nav">
+              <li><a id="source_a" href="#source">打印资源</a></li>
+              <li><a id="task_a" href="#task">当前任务</a></li>
+              <li><a id="ucenter_a" href="#ucenter">个人中心</a></li>
+          </ul>
+        </footer>
+      </div>
+  </div>
+
+
+
+<script type="text/javascript">
+
+    var instance1 = new gmu.Navigator('#nav');
+
+    var content = [
+        {
+            text:'我的任务',
+            href:'#u_task'
+        },
+        'divider',
+        {
+            text:'我的资源',
+            href:'#u_task'
+        },
+        'divider',
+        {
+            text: '登出',
+            icon: 'grid',
+            href: '#logout'
+        }
+    ];
+    var drop = $('#ucenter_a').dropmenu({
+        content: content,
+        placement: 'top',
+        align: 'right'
+    });
+
+    $('#printer-list-dialog').dialog({
+        autoOpen: false,
+        closeBtn: false,
+        scrollMove: true,
+        buttons: {
+            '确定': function(){
+                var printer_re = '<li class="data-list-li clearfix">'+$('input[name=printer_id]:checked').attr('printer_name')+'</li>';
+                $('#task-printer-list').html(printer_re);
+                this.close();
+            }
+        }
+    });
+    $('#printer-select-btn').click(function(){
+        $('#printer-list-dialog').dialog('open'); 
+    });
+</script>
+</body>
+</html>

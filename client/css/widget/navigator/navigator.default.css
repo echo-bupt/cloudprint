@@ -1,0 +1,60 @@
+/** 一级导航样式 */
+.ui-navigator {
+    background:#222;
+    border-top:1px solid #000;
+}
+.ui-navigator-list {
+    width: 100%;
+    display: -webkit-box;
+}
+.ui-navigator-list li{
+    line-height: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    -webkit-box-flex: 1;
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    border-right:black 1px solid;
+    border-left:rgba(255, 255, 255, 0.2) 1px solid;
+    border-top:rgba(255, 255, 255, 0.2) 1px solid;
+    background:rgba(0, 0, 0, 0.2);
+}
+.ui-navigator-list li a {
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+    width: 100%;
+    -webkit-box-sizing:border-box;
+    padding: 0 15px;
+}
+.ui-navigator-list li.ui-state-hover,
+.ui-navigator-list li.ui-state-active {
+    background: #000;
+    border-top:none;
+}
+
+.ui-scroller {
+    padding: 0;
+    margin: 0;
+    display: inline-block;/*重要，靠他让宽度由子节点撑开*/
+}
+.ui-scroller .ui-navigator-list {
+    display: block;
+    white-space:nowrap;/*内容不换行*/
+    display: inline-block;
+    width: auto;
+}
+.ui-scroller .ui-navigator-list:after {
+    content: '';
+    clear: both;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+.ui-scroller .ui-navigator-list li {
+    display: inline-block;
+    float: left;
+}

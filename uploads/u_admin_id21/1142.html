@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery-Slides插件图片循环轮播特效（小圆点状态展示）-无限设计网-5xsj.net</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style>
+img{ border:0;}
+#slides {position: relative;width: 644px;height: 277px;float:left;}
+.slides_container {overflow:hidden;position:relative;display:none;width: 644px;height: 277px;}
+.slides_container div.slide {width: 644px;height: 277px;display:block;}
+.slides_container img {width: 644px;height: 277px;display: block;}
+#slides .prev {margin-right: 5px;float:left;}
+#slides .next {margin-right: 5px;float:left;}
+.pagination {margin:6px 0 0;list-style: none;z-index:9999;position: absolute;bottom: 15px;right:15px;}
+.pagination li {float: left;margin: 0 1px;}
+.pagination li a {display: block;width: 13px;height: 0;padding-top: 13px;background-position: 0 0;float: left;overflow: hidden;background-image: url(images/circle.png);}
+.pagination li.current a, .pagination li.current a:hover { background-position: -16px -0px }
+.pagination li a:hover { background-position: 0px -0px }
+#slides a:link, #slides a:visited { color: #333 }
+#slides a:hover, #slides a:active { color: #9e2020 }  
+</style>
+<script type="text/javascript" language="javascript" src="http://www.5xsj.net/jquery/jquery/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" language="javascript" src="http://www.5xsj.net/article/22/125/demo/1142/js/slides.jquery.js"></script>
+<script>
+$(function(){			
+	$("#slides").slides({
+		preload: true,
+		preloadImage: 'images/loading.gif',
+		play: 5000,
+		pause: 2500,
+		hoverPause: true
+	});
+	var mw = $(".mbox").width()+10;
+	var ml = $(".mbox").length;	
+	$(".themes").width(mw*ml);
+	$(".t_menu li").mouseover(function(){
+		var index = $(this).index();
+		$(".themes").animate({left:-mw*index,opacity:1},500);
+	})
+});
+</script>
+</head>
+<body>
+<div id="slides" class="s_lb">
+<div class="slides_container">
+<div class="slide"><a href="javascript:;"><img src="images/01.jpg"/></a></div>
+<div class="slide"><a href="javascript:;"><img src="images/02.jpg"/></a></div>
+<div class="slide"><a href="javascript:;"><img src="images/03.jpg"/></a></div>
+<div class="slide"><a href="javascript:;"><img src="images/04.jpg"/></a></div>
+<div class="slide"><a href="javascript:;"><img src="images/05.jpg"/></a></div>
+</div>
+</div>
+</body>
+</html>
